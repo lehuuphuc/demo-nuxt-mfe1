@@ -3,6 +3,8 @@ import federation from "@originjs/vite-plugin-federation"
 
 const MFE_HOST = process.env.MFE_APP1_HOST
 
+console.log(`MFE_APP1_HOST=${MFE_HOST}`)
+
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: false },
