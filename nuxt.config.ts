@@ -1,6 +1,8 @@
 import { defineNuxtConfig } from "nuxt/config"
 import federation from "@originjs/vite-plugin-federation"
 
+const MFE_HOST = process.env.MFE_APP1_HOST
+
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: false },
@@ -13,7 +15,7 @@ export default defineNuxtConfig({
       federation({
         name: "host-app",
         remotes: {
-          remote: "http://localhost:3001/_nuxt/remoteEntry.js"
+          remote: `${MFE_HOST}/_nuxt/remoteEntry.js`
         }
         // shared: ['vue']
       })
