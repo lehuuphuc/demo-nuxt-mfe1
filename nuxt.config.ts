@@ -7,13 +7,16 @@ const MFE_HOST = process.env.NUXT_MFE_APP1_HOST
 console.log(`NUXT_MFE_APP1_HOST=${MFE_HOST}`)
 
 export default defineNuxtConfig({
-  compatibilityDate: "2024-04-03",
+  compatibilityDate: "2025-07-20",
   devtools: { enabled: false },
   ssr: false,
   nitro: {
     preset: "netlify-static"
   },
   vite: {
+    build: {
+      target: "ES2022"
+    },
     server: {
       proxy: {
         "^/node_modules/.*": {
